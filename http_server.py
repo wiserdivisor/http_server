@@ -1,18 +1,18 @@
 import socket
 
-HOST = "127.0.0.1"
-PORT = 8080
+host = "127.0.0.1"
+port = 8080
 
-server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)         # CREATE SOCKET
-server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) # SET OPTIONS
-server_socket.bind((HOST,PORT))                                           # BIND
-server_socket.listen(5)                                                   # LISTEN
+server_socket = socket.socket(socket.af_inet, socket.sock_stream)         # create socket
+server_socket.setsockopt(socket.sol_socket, socket.so_reuseaddr, 1) # set options
+server_socket.bind((host,port))                                           # bind
+server_socket.listen(5)                                                   # listen
 
-print(f"Listening on http://{HOST}:{PORT}/")
+print(f"listening on http://{host}:{port}/")
 
-while True:
+while true:
     conn, addr = server_socket.accept()
-    print(f"Connected from {addr}")
+    print(f"connected from {addr}")
 
     request_data = b""
     while b"\r\n\r\n" not in request_data:
@@ -21,7 +21,7 @@ while True:
             break
         request_data += chunk
 
-    print("\n---- Raw Request ----")
+    print("\n---- raw request ----")
     print(request_data.decode(errors="encode"))
 
     conn.close()
