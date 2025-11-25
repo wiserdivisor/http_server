@@ -1,16 +1,14 @@
 # HTTP SERVER
-All implementations of HTTP done by me, in different languages.
+    All implementations of HTTP Server done by me, in different languages.
 
-## Languages
+## HTTP 1.0
   - [ ] Python
   - [ ] C++
-  - [ ] Java
-  - [ ] Go
 
-## Animation Diagram
-
-## C10K
+## HTTP 1.1
   - [ ] Python
   - [ ] C++
-  - [ ] Java
-  - [ ] Go
+
+## HTTP 1.1 C10K
+  - [ ] Python
+  - [ ] C++
